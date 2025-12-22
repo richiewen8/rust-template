@@ -1,0 +1,10 @@
+[template]
+cargo_generate_version = ">=0.19.0"
+
+# 告诉 cargo-generate 哪些文件不需要进行模板变量替换
+# cliff.toml 必须排除，因为它自带的语法会干扰模板引擎
+exclude = ["cliff.toml"]
+
+[placeholders.project-name]
+type = "string"
+default = "my-rust-project"
