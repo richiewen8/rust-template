@@ -1,10 +1,8 @@
 [template]
 cargo_generate_version = ">=0.19.0"
+# 确保 exclude 只排除需要跳过模板替换的文件，而不是排除文件本身
+# 使用 skip_substitution 比 exclude 更安全，因为它会复制文件但不解析 {{ }}
+skip_substitution = ["cliff.toml"] 
 
-# 告诉 cargo-generate 哪些文件不需要进行模板变量替换
-# cliff.toml 必须排除，因为它自带的语法会干扰模板引擎
-exclude = ["cliff.toml"]
-
-[placeholders.project-name]
-type = "string"
-default = "my-rust-project"
+# 如果你使用了 include，请务必包含 README 和 src
+include = ["Cargo.toml", "src/**/*", "deny.toml", "cliff.toml", ".pre-commit-config.yaml", "README.md", "LICENSE"]
