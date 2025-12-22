@@ -1,0 +1,9 @@
+[package]
+name = "template"
+version = "0.1.0"
+edition = "2024"
+license-file = "LICENSE"
+# license = "GPL-3.0-or-later" # 必须和 deny.toml 里的 allow 一致
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
