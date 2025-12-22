@@ -1,5 +1,0 @@
-[template]
-cargo_generate_version = ">=0.19.0"
-
-# 重要：告诉工具拷贝这些文件，但不要尝试解析/替换里面的内容
-skip_substitution = ["cliff.toml"]
