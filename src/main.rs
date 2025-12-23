@@ -1,5 +1,5 @@
 fn main() {
-    println!("Hello from {{project-name}} (Rust 2024)!");
+    println!("Starting {{ project-name }}");
 }
 
 #[cfg(test)]

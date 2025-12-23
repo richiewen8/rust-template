@@ -1,33 +1,17 @@
 [template]
-cargo_generate_version = ">=0.18.0"
+cargo_generate_version = ">=0.18"
 
-# 模板说明（可选）
-description = "Enterprise-grade Rust project template (Rust 2024, pre-commit, git-cliff, CI ready)"
-
-# 在生成完成后执行的命令
-post_generate = [
-  "git init",
-  "git add .",
-  "git commit -m \"chore: init project from rust-enterprise-template\""
-]
-
-# =========================
-# 占位符定义
-# =========================
-
-[placeholders.project-name]
-type = "string"
-prompt = "Project name (kebab-case recommended, e.g. order-service)"
-
-[placeholders.project-description]
+[placeholders.description]
 type = "string"
 prompt = "Project description"
-default = "Enterprise Rust project"
+default = "Enterprise Rust Application"
 
-[placeholders.author-name]
+[placeholders.company]
 type = "string"
-prompt = "Author name"
+prompt = "Company name"
+default = "Your Company"
 
-[placeholders.author-email]
+[placeholders.service_name]
 type = "string"
-prompt = "Author email"
+prompt = "Service logical name"
+default = "core-service"
