@@ -1,17 +1,24 @@
 [template]
 cargo_generate_version = ">=0.18"
 
-[placeholders.description]
-type = "string"
-prompt = "Project description"
-default = "Enterprise Rust Application"
+# 不对这些文件做 {{ }} 替换
+exclude = [
+  ".pre-commit-config.yaml",
+  "cliff.toml",
+  "CHANGELOG.md",
+]
 
 [placeholders.company]
 type = "string"
 prompt = "Company name"
-default = "Your Company"
+default = "your-company"
 
-[placeholders.service_name]
+[placeholders.service]
 type = "string"
 prompt = "Service logical name"
-default = "core-service"
+default = "service"
+
+[placeholders.description]
+type = "string"
+prompt = "Project description"
+default = "Enterprise Rust service"
