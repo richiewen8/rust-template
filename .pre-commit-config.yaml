@@ -20,42 +20,42 @@ repos:
       - id: cargo-fmt
         name: cargo fmt
         description: Format files with rustfmt.
-        entry: bash -c 'grep -q "{{" Cargo.toml && exit 0 || cargo fmt'
-        language: rust
+        entry: bash -c 'cargo fmt -- --check'
+        language: system
         files: \.rs$
         args: []
       - id: cargo-deny
         name: cargo deny check
         description: Check cargo dependencies
         entry: bash -c 'cargo deny check -d'
-        language: rust
+        language: system
         files: \.rs$
         args: []
       - id: typos
         name: typos
         description: check typo
         entry: bash -c 'typos'
-        language: rust
+        language: system
         files: \.*$
         pass_filenames: false
       - id: cargo-check
         name: cargo check
         description: Check the package for errors.
         entry: bash -c 'cargo check --all'
-        language: rust
+        language: system
         files: \.rs$
         pass_filenames: false
       - id: cargo-clippy
         name: cargo clippy
         description: Lint rust sources
         entry: bash -c 'cargo clippy --all-targets --all-features --tests --benches -- -D warnings'
-        language: rust
+        language: system
         files: \.rs$
         pass_filenames: false
       - id: cargo-test
-        name: cargo test
-        description: unit test for the project
+        name: cargo test (nextest)
+        description: Run Rust unit tests
         entry: bash -c 'cargo nextest run --all-features'
-        language: rust
-        files: \.rs$
+        language: system
         pass_filenames: false
+        always_run: true
